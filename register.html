@@ -69,7 +69,7 @@ function register() {
     FeePaid: document.getElementById("FeePaid").value
   };
 
-  fetch("/register", {
+  fetch("https://uta-tennis.onrender.com//register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)

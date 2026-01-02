@@ -13,7 +13,7 @@
 
 <script>
 function login() {
-  fetch("/login", {
+  fetch("https://uta-tennis.onrender.com//login", {
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body: JSON.stringify({ whatsapp: whatsapp.value })

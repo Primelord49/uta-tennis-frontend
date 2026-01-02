@@ -14,7 +14,7 @@
 
 <script>
 function login(){
-  fetch("/admin-login",{
+  fetch("https://uta-tennis.onrender.com//admin-login",{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({username:user.value,password:pass.value})
