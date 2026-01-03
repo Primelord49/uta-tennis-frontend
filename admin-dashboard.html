@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin Dashboard</title>
-<link rel="stylesheet" href="style.css">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h2>Welcome back, Admin!</h2>
 
-<table>
-<thead>
-<tr><th>Name</th><th>WhatsApp</th><th>City</th></tr>
-</thead>
-<tbody id="rows"></tbody>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>WhatsApp</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody id="rows"></tbody>
 </table>
 
 <script>
-fetch("https://uta-tennis.onrender.com//players")
-.then(res=>res.json())
-.then(data=>{
-  data.forEach(p=>{
-    rows.innerHTML+=`
-      <tr>
-        <td>${p.Name}</td>
-        <td>${p.WhatsAppNumber}</td>
-        <td>${p.City}</td>
-      </tr>`;
+const rows = document.getElementById("rows");
+
+fetch("https://uta-tennis.onrender.com/players")
+  .then(res => res.json())
+  .then(data => {
+    data.forEach(p => {
+      rows.innerHTML += `
+        <tr>
+          <td>${p.Name}</td>
+          <td>${p.WhatsAppNumber}</td>
+          <td>${p.City}</td>
+        </tr>
+      `;
+    });
+  })
+  .catch(err => {
+    console.error("Error fetching players:", err);
   });
-});
 </script>
 
 </body>
 </html>
+
 
 
 

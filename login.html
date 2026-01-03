@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
-<link rel="stylesheet" href="style.css">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h2>Player Login</h2>
-<input id="whatsapp" placeholder="WhatsApp">
+
+<input id="whatsapp" placeholder="WhatsApp Number">
 <button onclick="login()">Login</button>
+
 <p id="msg"></p>
 
 <script>
 function login() {
-  fetch("https://uta-tennis.onrender.com//login", {
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body: JSON.stringify({ whatsapp: whatsapp.value })
+  fetch("https://uta-tennis.onrender.com/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      whatsapp: document.getElementById("whatsapp").value
+    })
   })
-  .then(res=>res.json())
-  .then(data=>{
-    if(data.success) location.href="view.html";
-    else msg.innerText="❌ Player not found";
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      window.location.href = "view.html";
+    } else {
+      document.getElementById("msg").innerText = "❌ Player not found";
+    }
   });
 }
 </script>
