@@ -2,58 +2,63 @@
 <html>
 <head>
   <title>Player Registration</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="form-card">
+
 <h2>Player Registration</h2>
 
-<label><b>Full Name</b></label><br>
-<input type="text" id="Name" placeholder="Full Name" required><br><br>
+<label><b>Full Name</b></label>
+<input type="text" id="Name" placeholder="Full Name" required>
 
-<label><b>WhatsApp Number</b></label><br>
-<input type="text" id="WhatsAppNumber" placeholder="WhatsApp Number" required><br><br>
+<label><b>WhatsApp Number</b></label>
+<input type="text" id="WhatsAppNumber" placeholder="WhatsApp Number" required>
 
-<label><b>Date of Birth</b></label><br>
-<input type="date" id="DateOfBirth"><br><br>
+<label><b>Date of Birth</b></label>
+<input type="date" id="DateOfBirth">
 
-<label><b>City</b></label><br>
-<input type="text" id="City"><br><br>
+<label><b>City</b></label>
+<input type="text" id="City">
 
-<label><b>Shirt Size</b></label><br>
+<label><b>Shirt Size</b></label>
 <select id="ShirtSize">
   <option value="S">S</option>
   <option value="M">M</option>
   <option value="L">L</option>
-</select><br><br>
+</select>
 
-<label><b>Short Size</b></label><br>
+<label><b>Short Size</b></label>
 <select id="ShortSize">
   <option value="S">S</option>
   <option value="M">M</option>
   <option value="L">L</option>
-</select><br><br>
+</select>
 
-<label><b>Food Preference</b></label><br>
+<label><b>Food Preference</b></label>
 <select id="FoodPref">
   <option value="Veg">Veg</option>
   <option value="Non-Veg">Non-Veg</option>
-</select><br><br>
+</select>
 
-<label><b>Stay Required</b></label><br>
+<label><b>Stay Required</b></label>
 <select id="StayYorN">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-</select><br><br>
+</select>
 
-<label><b>Fee Status</b></label><br>
+<label><b>Fee Status</b></label>
 <select id="FeePaid">
   <option value="Paid">Paid</option>
   <option value="Not Paid">Not Paid</option>
-</select><br><br>
+</select>
 
 <button onclick="register()">Register</button>
 
 <p id="msg"></p>
+
+</div>
 
 <script>
 function register() {
