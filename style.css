@@ -3,166 +3,119 @@
   font-family:'Segoe UI',sans-serif;
 }
 
-/* ===== ABSTRACT TENNIS BACKGROUND (NO PHOTOS) ===== */
+/* ===== LIGHT TENNIS PORTAL BACKGROUND ===== */
 body{
   margin:0;
+  padding:40px 20px;
   min-height:100vh;
-  padding-top:210px;
   display:flex;
   flex-direction:column;
   align-items:center;
 
   background:
-    radial-gradient(circle at 20% 30%, rgba(180,255,120,0.35), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(120,200,255,0.35), transparent 45%),
-    linear-gradient(135deg, #0b3d91, #0f9b8e);
-  background-attachment:fixed;
+    linear-gradient(135deg,#eef6ff,#f9fcff);
 }
 
-/* ===== GLOBAL HEADER / BANNER ===== */
+/* ===== SUBTLE TOP TITLE ===== */
 body::before{
   content:"Uttaranchal Tennis Association";
-  position:fixed;
-  top:0;
-  left:0;
   width:100%;
-  height:150px;
-  background:
-    linear-gradient(135deg,#003366,#0057b8);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:32px;
-  font-weight:700;
-  letter-spacing:1px;
-  z-index:10;
-  box-shadow:0 8px 25px rgba(0,0,0,0.45);
-}
-
-body::after{
-  content:"Official Tennis Tournament Registration Portal";
-  position:fixed;
-  top:95px;
-  left:0;
-  width:100%;
-  text-align:center;
-  color:#dbeaff;
-  font-size:14px;
-  letter-spacing:0.5px;
-  z-index:11;
+  max-width:1100px;
+  padding:16px 24px;
+  margin-bottom:25px;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  font-size:20px;
+  font-weight:600;
+  color:#003366;
 }
 
 /* ===== PAGE TITLE ===== */
 h2{
   color:#003366;
-  font-size:28px;
-  margin:0 0 25px 0;
-  text-align:center;
+  font-size:24px;
+  margin:0 0 20px 0;
+  text-align:left;
+  width:100%;
+  max-width:1100px;
 }
 
-h2::after{
-  content:"";
-  width:70px;
-  height:4px;
-  background:linear-gradient(to right,#0057b8,#6dd5fa);
-  display:block;
-  margin:12px auto 0;
-  border-radius:4px;
-}
-
-/* ===== CONTENT CARD (THIS FIXES REGISTRATION PAGE) ===== */
-body > h2,
-body > table,
-body > button,
+/* ===== CONTENT WRAPPER (AUTO FOR ALL PAGES) ===== */
+table,
+form,
 body > input,
-body > select{
-  max-width:900px;
+body > select,
+body > button{
+  width:100%;
+  max-width:1100px;
 }
 
-/* Create a card illusion for loose elements */
-body > *:not(script):not(style){
-  background:white;
-  border-radius:18px;
-  box-shadow:0 22px 45px rgba(0,0,0,0.35);
-  padding:35px 40px;
-  margin-bottom:30px;
-}
-
-/* ===== INPUTS & SELECTS ===== */
+/* ===== FORMS ===== */
 input, select{
   width:100%;
-  max-width:420px;
-  padding:13px 14px;
-  margin:8px 0 18px 0;
-  border-radius:9px;
+  max-width:360px;
+  padding:11px 12px;
+  margin-bottom:16px;
+  border-radius:6px;
   border:1px solid #ccc;
   font-size:14px;
-  background:#f9fbfd;
-  display:block;
+  background:white;
 }
 
 input:focus, select:focus{
   outline:none;
   border-color:#0057b8;
-  box-shadow:0 0 0 3px rgba(0,87,184,0.25);
-  background:white;
+  box-shadow:0 0 0 2px rgba(0,87,184,0.15);
 }
 
 /* ===== BUTTONS ===== */
 button{
-  padding:14px 34px;
-  background:linear-gradient(135deg,#0057b8,#00c6ff);
+  padding:12px 26px;
+  background:#0057b8;
   color:white;
   border:none;
-  border-radius:30px;
+  border-radius:6px;
   cursor:pointer;
-  font-size:15px;
+  font-size:14px;
   font-weight:600;
-  box-shadow:0 10px 26px rgba(0,87,184,0.45);
 }
 
 button:hover{
-  background:linear-gradient(135deg,#003f8a,#0094cc);
-  transform:translateY(-2px);
+  background:#003f8a;
 }
 
 /* ===== TABLES ===== */
 table{
-  width:100%;
-  max-width:1000px;
   border-collapse:collapse;
+  background:white;
+  border-radius:10px;
   overflow:hidden;
-}
-
-thead{
-  background:linear-gradient(135deg,#003366,#0057b8);
+  box-shadow:0 6px 16px rgba(0,0,0,0.08);
 }
 
 th{
+  background:#0057b8;
   color:white;
-  padding:14px;
-  text-align:left;
+  padding:12px;
   font-size:14px;
+  text-align:left;
 }
 
 td{
-  padding:14px;
+  padding:12px;
   border-bottom:1px solid #e6e6e6;
+  font-size:14px;
 }
 
 tr:nth-child(even){
   background:#f5f9ff;
 }
 
-tr:hover{
-  background:#eaf3ff;
-}
-
 /* ===== LINKS ===== */
 a{
   color:#0057b8;
-  font-weight:600;
+  font-weight:500;
   text-decoration:none;
 }
 
@@ -173,20 +126,14 @@ a:hover{
 /* ===== MOBILE ===== */
 @media(max-width:768px){
   body{
-    padding-top:190px;
+    padding:20px 12px;
   }
 
   body::before{
-    font-size:24px;
-    height:130px;
-  }
-
-  body::after{
-    top:85px;
-    font-size:12px;
+    font-size:18px;
   }
 
   h2{
-    font-size:22px;
+    font-size:20px;
   }
 }
