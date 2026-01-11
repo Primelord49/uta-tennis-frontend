@@ -3,31 +3,32 @@
   font-family:'Segoe UI',sans-serif;
 }
 
-/* ===== GLOBAL BACKGROUND ===== */
+/* ===== ABSTRACT TENNIS BACKGROUND (NO PHOTOS) ===== */
 body{
   margin:0;
   min-height:100vh;
-  padding-top:220px;
+  padding-top:210px;
   display:flex;
   flex-direction:column;
   align-items:center;
+
   background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("https://images.unsplash.com/photo-1505666287802-931dc83948e9");
-  background-size:cover;
-  background-position:center;
+    radial-gradient(circle at 20% 30%, rgba(180,255,120,0.35), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(120,200,255,0.35), transparent 45%),
+    linear-gradient(135deg, #0b3d91, #0f9b8e);
   background-attachment:fixed;
 }
 
-/* ===== HERO TITLE (ALL PAGES) ===== */
+/* ===== GLOBAL HEADER / BANNER ===== */
 body::before{
   content:"Uttaranchal Tennis Association";
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  height:160px;
-  background:linear-gradient(135deg,#003366,#0057b8);
+  height:150px;
+  background:
+    linear-gradient(135deg,#003366,#0057b8);
   color:white;
   display:flex;
   align-items:center;
@@ -36,28 +37,27 @@ body::before{
   font-weight:700;
   letter-spacing:1px;
   z-index:10;
-  box-shadow:0 6px 25px rgba(0,0,0,0.4);
+  box-shadow:0 8px 25px rgba(0,0,0,0.45);
 }
 
-/* Subtitle under hero title */
 body::after{
-  content:"Official Tournament Registration Portal";
+  content:"Official Tennis Tournament Registration Portal";
   position:fixed;
-  top:110px;
+  top:95px;
   left:0;
   width:100%;
   text-align:center;
-  color:#e0e0e0;
+  color:#dbeaff;
   font-size:14px;
   letter-spacing:0.5px;
   z-index:11;
 }
 
-/* ===== PAGE HEADING ===== */
+/* ===== PAGE TITLE ===== */
 h2{
   color:#003366;
   font-size:28px;
-  margin-bottom:25px;
+  margin:0 0 25px 0;
   text-align:center;
 }
 
@@ -65,43 +65,41 @@ h2::after{
   content:"";
   width:70px;
   height:4px;
-  background:linear-gradient(to right,#0057b8,#00aaff);
+  background:linear-gradient(to right,#0057b8,#6dd5fa);
   display:block;
-  margin:10px auto 0;
+  margin:12px auto 0;
   border-radius:4px;
 }
 
-/* ===== CONTENT CARD (FORMS & TABLES) ===== */
-form, table{
+/* ===== CONTENT CARD (THIS FIXES REGISTRATION PAGE) ===== */
+body > h2,
+body > table,
+body > button,
+body > input,
+body > select{
+  max-width:900px;
+}
+
+/* Create a card illusion for loose elements */
+body > *:not(script):not(style){
   background:white;
-  border-radius:16px;
-  box-shadow:0 20px 45px rgba(0,0,0,0.3);
-}
-
-/* ===== FORMS ===== */
-form{
+  border-radius:18px;
+  box-shadow:0 22px 45px rgba(0,0,0,0.35);
   padding:35px 40px;
-  max-width:800px;
-  width:100%;
-  margin-bottom:40px;
+  margin-bottom:30px;
 }
 
-label{
-  font-weight:600;
-  display:block;
-  margin-bottom:6px;
-  color:#333;
-}
-
+/* ===== INPUTS & SELECTS ===== */
 input, select{
   width:100%;
-  max-width:380px;
-  padding:12px 14px;
-  margin-bottom:18px;
-  border-radius:8px;
+  max-width:420px;
+  padding:13px 14px;
+  margin:8px 0 18px 0;
+  border-radius:9px;
   border:1px solid #ccc;
   font-size:14px;
   background:#f9fbfd;
+  display:block;
 }
 
 input:focus, select:focus{
@@ -113,30 +111,28 @@ input:focus, select:focus{
 
 /* ===== BUTTONS ===== */
 button{
-  margin-top:15px;
-  padding:14px 32px;
-  background:linear-gradient(135deg,#0057b8,#008cff);
+  padding:14px 34px;
+  background:linear-gradient(135deg,#0057b8,#00c6ff);
   color:white;
   border:none;
   border-radius:30px;
   cursor:pointer;
   font-size:15px;
   font-weight:600;
-  box-shadow:0 8px 22px rgba(0,87,184,0.45);
+  box-shadow:0 10px 26px rgba(0,87,184,0.45);
 }
 
 button:hover{
-  background:linear-gradient(135deg,#003f8a,#006edc);
+  background:linear-gradient(135deg,#003f8a,#0094cc);
   transform:translateY(-2px);
 }
 
 /* ===== TABLES ===== */
 table{
-  max-width:1000px;
   width:100%;
+  max-width:1000px;
   border-collapse:collapse;
   overflow:hidden;
-  margin-bottom:40px;
 }
 
 thead{
@@ -148,13 +144,11 @@ th{
   padding:14px;
   text-align:left;
   font-size:14px;
-  letter-spacing:0.5px;
 }
 
 td{
   padding:14px;
-  border-bottom:1px solid #e0e0e0;
-  font-size:14px;
+  border-bottom:1px solid #e6e6e6;
 }
 
 tr:nth-child(even){
@@ -179,16 +173,16 @@ a:hover{
 /* ===== MOBILE ===== */
 @media(max-width:768px){
   body{
-    padding-top:200px;
+    padding-top:190px;
   }
 
   body::before{
     font-size:24px;
-    height:140px;
+    height:130px;
   }
 
   body::after{
-    top:95px;
+    top:85px;
     font-size:12px;
   }
 
