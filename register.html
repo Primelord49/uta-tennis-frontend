@@ -6,58 +6,82 @@
 </head>
 <body>
 
-<div class="form-card">
+<div class="page-header">
+  <h1>Uttaranchal Tennis Association</h1>
+  <p>Official Tournament Registration Portal</p>
+</div>
 
-<h2>Player Registration</h2>
+<div class="container">
+  <h2>Player Registration</h2>
 
-<label><b>Full Name</b></label>
-<input type="text" id="Name" placeholder="Full Name" required>
+  <div class="form-card">
 
-<label><b>WhatsApp Number</b></label>
-<input type="text" id="WhatsAppNumber" placeholder="WhatsApp Number" required>
+    <label>
+      Full Name
+      <input type="text" id="Name" placeholder="Full Name" required>
+    </label>
 
-<label><b>Date of Birth</b></label>
-<input type="date" id="DateOfBirth">
+    <label>
+      WhatsApp Number
+      <input type="text" id="WhatsAppNumber" placeholder="WhatsApp Number" required>
+    </label>
 
-<label><b>City</b></label>
-<input type="text" id="City">
+    <label>
+      Date of Birth
+      <input type="date" id="DateOfBirth">
+    </label>
 
-<label><b>Shirt Size</b></label>
-<select id="ShirtSize">
-  <option value="S">S</option>
-  <option value="M">M</option>
-  <option value="L">L</option>
-</select>
+    <label>
+      City
+      <input type="text" id="City" placeholder="City">
+    </label>
 
-<label><b>Short Size</b></label>
-<select id="ShortSize">
-  <option value="S">S</option>
-  <option value="M">M</option>
-  <option value="L">L</option>
-</select>
+    <label>
+      Shirt Size
+      <select id="ShirtSize">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+      </select>
+    </label>
 
-<label><b>Food Preference</b></label>
-<select id="FoodPref">
-  <option value="Veg">Veg</option>
-  <option value="Non-Veg">Non-Veg</option>
-</select>
+    <label>
+      Short Size
+      <select id="ShortSize">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+      </select>
+    </label>
 
-<label><b>Stay Required</b></label>
-<select id="StayYorN">
-  <option value="Yes">Yes</option>
-  <option value="No">No</option>
-</select>
+    <label>
+      Food Preference
+      <select id="FoodPref">
+        <option>Veg</option>
+        <option>Non-Veg</option>
+      </select>
+    </label>
 
-<label><b>Fee Status</b></label>
-<select id="FeePaid">
-  <option value="Paid">Paid</option>
-  <option value="Not Paid">Not Paid</option>
-</select>
+    <label>
+      Stay Required
+      <select id="StayYorN">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
 
-<button onclick="register()">Register</button>
+    <label>
+      Fee Status
+      <select id="FeePaid">
+        <option>Paid</option>
+        <option>Not Paid</option>
+      </select>
+    </label>
 
-<p id="msg"></p>
+    <button onclick="register()">Register</button>
 
+    <p id="msg"></p>
+  </div>
 </div>
 
 <script>
