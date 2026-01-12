@@ -6,13 +6,32 @@
 </head>
 <body>
 
-<h2>Admin Login</h2>
+<div class="page-header">
+  <h1>Uttaranchal Tennis Association</h1>
+  <p>Administrator Access</p>
+</div>
 
-<input id="user" placeholder="Username">
-<input id="pass" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
+<div class="container center-container">
 
-<p id="msg"></p>
+  <div class="auth-card">
+    <h2>Admin Login</h2>
+
+    <label>
+      Username
+      <input id="user" placeholder="Username">
+    </label>
+
+    <label>
+      Password
+      <input id="pass" type="password" placeholder="Password">
+    </label>
+
+    <button onclick="login()">Login</button>
+
+    <p id="msg"></p>
+  </div>
+
+</div>
 
 <script>
 function login() {
@@ -39,9 +58,3 @@ function login() {
 
 </body>
 </html>
-
-
-
-
-
-

@@ -124,3 +124,146 @@ h2{
     font-size:20px;
   }
 }
+/* TABLE CARD */
+.table-card{
+  background:white;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  padding:20px;
+  overflow-x:auto;
+}
+
+/* TABLE STYLING */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+thead{
+  background:#0057b8;
+  color:white;
+}
+
+th, td{
+  padding:12px 14px;
+  text-align:left;
+}
+
+tbody tr{
+  border-bottom:1px solid #eee;
+}
+
+tbody tr:hover{
+  background:#f5f9ff;
+}
+
+/* MOBILE TABLE SCROLL */
+@media(max-width:600px){
+  table{
+    font-size:13px;
+  }
+}
+/* CENTER AUTH LAYOUT */
+.center-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* LOGIN / AUTH CARD */
+.auth-card{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  width:100%;
+  max-width:420px;
+}
+
+.auth-card h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#003366;
+}
+
+/* LABEL STACK */
+.auth-card label{
+  display:flex;
+  flex-direction:column;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+/* INPUTS */
+.auth-card input{
+  margin-top:6px;
+  padding:10px 12px;
+  font-size:14px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* LOGIN BUTTON */
+.auth-card button{
+  width:100%;
+  height:42px;
+  background:#0057b8;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.auth-card button:hover{
+  background:#003f8a;
+}
+
+/* MESSAGE */
+#msg{
+  text-align:center;
+  margin-top:12px;
+  font-weight:600;
+}
+/* HOME PAGE CARD */
+.home-card{
+  background:white;
+  padding:35px 30px;
+  border-radius:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.1);
+  width:100%;
+  max-width:420px;
+  text-align:center;
+}
+
+.home-card h2{
+  margin-bottom:8px;
+  color:#003366;
+}
+
+.home-card p{
+  margin-bottom:20px;
+  color:#555;
+  font-size:14px;
+}
+
+/* HOME LINKS */
+.home-link{
+  display:block;
+  margin:12px 0;
+  padding:12px;
+  background:#f4f8fc;
+  border-radius:8px;
+  text-decoration:none;
+  color:#0057b8;
+  font-size:15px;
+  font-weight:600;
+  transition:all 0.2s ease;
+}
+
+.home-link:hover{
+  background:#0057b8;
+  color:white;
+}

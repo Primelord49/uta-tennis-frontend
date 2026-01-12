@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Player Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Player Login</h2>
+<div class="page-header">
+  <h1>Uttaranchal Tennis Association</h1>
+  <p>Player Login</p>
+</div>
 
-<input id="whatsapp" placeholder="WhatsApp Number">
-<button onclick="login()">Login</button>
+<div class="container center-container">
 
-<p id="msg"></p>
+  <div class="auth-card">
+    <h2>Player Login</h2>
+
+    <label>
+      WhatsApp Number
+      <input id="whatsapp" placeholder="WhatsApp Number">
+    </label>
+
+    <button onclick="login()">Login</button>
+
+    <p id="msg"></p>
+  </div>
+
+</div>
 
 <script>
 function login() {
