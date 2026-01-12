@@ -12,7 +12,7 @@
 </div>
 
 <div class="container">
-  <h2>Welcome back, Admin!</h2>
+  <h2>Registered Players</h2>
 
   <div class="table-card">
     <table>
@@ -21,6 +21,7 @@
           <th>Name</th>
           <th>WhatsApp</th>
           <th>City</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody id="rows"></tbody>
@@ -28,29 +29,102 @@
   </div>
 </div>
 
+<!-- EDIT MODAL -->
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <h3>Edit Player</h3>
+
+    <input type="hidden" id="editId">
+
+    <label>Name
+      <input id="editName">
+    </label>
+
+    <label>WhatsApp
+      <input id="editWhatsApp">
+    </label>
+
+    <label>City
+      <input id="editCity">
+    </label>
+
+    <button onclick="updatePlayer()">Update</button>
+    <button class="danger" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
 <script>
 const rows = document.getElementById("rows");
 
-fetch("https://uta-tennis.onrender.com/players")
-  .then(res => res.json())
-  .then(data => {
-    data.forEach(p => {
-      rows.innerHTML += `
-        <tr>
-          <td>${p.Name}</td>
-          <td>${p.WhatsAppNumber}</td>
-          <td>${p.City}</td>
-        </tr>
-      `;
+function loadPlayers(){
+  fetch("https://uta-tennis.onrender.com/players")
+    .then(res => res.json())
+    .then(data => {
+      rows.innerHTML = "";
+      data.forEach(p => {
+        rows.innerHTML += `
+          <tr>
+            <td>${p.Name}</td>
+            <td>${p.WhatsAppNumber}</td>
+            <td>${p.City || ""}</td>
+            <td>
+              <button onclick='openEdit(${JSON.stringify(p)})'>Edit</button>
+              <button class="danger" onclick='deletePlayer("${p._id}")'>Delete</button>
+            </td>
+          </tr>
+        `;
+      });
     });
+}
+
+loadPlayers();
+
+/* EDIT */
+function openEdit(p){
+  document.getElementById("editId").value = p._id;
+  document.getElementById("editName").value = p.Name;
+  document.getElementById("editWhatsApp").value = p.WhatsAppNumber;
+  document.getElementById("editCity").value = p.City || "";
+  document.getElementById("editModal").style.display = "flex";
+}
+
+function closeModal(){
+  document.getElementById("editModal").style.display = "none";
+}
+
+/* UPDATE */
+function updatePlayer(){
+  const id = document.getElementById("editId").value;
+
+  fetch(`https://uta-tennis.onrender.com/players/${id}`, {
+    method:"PUT",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify({
+      Name: document.getElementById("editName").value,
+      WhatsAppNumber: document.getElementById("editWhatsApp").value,
+      City: document.getElementById("editCity").value
+    })
   })
-  .catch(err => {
-    console.error("Error fetching players:", err);
+  .then(() => {
+    closeModal();
+    loadPlayers();
   });
+}
+
+/* DELETE */
+function deletePlayer(id){
+  if(!confirm("Delete this player?")) return;
+
+  fetch(`https://uta-tennis.onrender.com/players/${id}`, {
+    method:"DELETE"
+  })
+  .then(() => loadPlayers());
+}
 </script>
 
 </body>
 </html>
+
 
 
 
